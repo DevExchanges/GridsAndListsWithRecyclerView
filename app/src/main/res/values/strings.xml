@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RecyclerView</string>
+    <string name="lorem_ipsum">Quisque sit amet massa magna</string>
+</resources>
