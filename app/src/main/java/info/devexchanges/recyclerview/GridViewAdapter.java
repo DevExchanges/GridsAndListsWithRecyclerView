@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class GridViewAdapter extends RecyclerView.Adapter<GridViewAdapter.ViewHolder> {
 
@@ -27,7 +28,7 @@ public class GridViewAdapter extends RecyclerView.Adapter<GridViewAdapter.ViewHo
 
     @SuppressLint("SetTextI18n")
     @Override
-    public void onBindViewHolder(GridViewAdapter.ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(GridViewAdapter.ViewHolder viewHolder, final int position) {
         if (position % 3 == 0) {
             viewHolder.imageView.setImageResource(R.drawable.sample_3);
         } else if (position % 3 == 1) {
@@ -36,6 +37,12 @@ public class GridViewAdapter extends RecyclerView.Adapter<GridViewAdapter.ViewHo
             viewHolder.imageView.setImageResource(R.drawable.sample_2);
         }
         viewHolder.textView.setText("Position: " + (position + 1));
+        viewHolder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(activity, "You clicked at position: " + position, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

@@ -6,7 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -27,7 +29,13 @@ public class HorizontalListAdapter extends RecyclerView.Adapter<HorizontalListAd
     }
 
     @Override
-    public void onBindViewHolder(HorizontalListAdapter.ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(HorizontalListAdapter.ViewHolder viewHolder, final int position) {
+        viewHolder.linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(activity, "Position clicked: " + position, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -39,8 +47,12 @@ public class HorizontalListAdapter extends RecyclerView.Adapter<HorizontalListAd
      * View holder to display each RecylerView item
      */
     protected class ViewHolder extends RecyclerView.ViewHolder {
+
+        private LinearLayout linearLayout;
+
         public ViewHolder(View view) {
             super(view);
+            linearLayout = (LinearLayout)view.findViewById(R.id.layout);
         }
     }
 }

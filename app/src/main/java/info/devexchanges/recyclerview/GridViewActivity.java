@@ -20,7 +20,7 @@ public class GridViewActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
 
         //set GridLayoutManager
-        GridLayoutManager layoutManager = new GridAutoFitLayoutManager(this, 120);
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 3);
         recyclerView.setLayoutManager(layoutManager);
         adapter = new GridViewAdapter(this);
         recyclerView.setAdapter(adapter);

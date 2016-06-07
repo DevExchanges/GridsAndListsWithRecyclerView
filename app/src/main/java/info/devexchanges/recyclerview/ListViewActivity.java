@@ -25,7 +25,7 @@ public class ListViewActivity extends AppCompatActivity {
         verticalList.setHasFixedSize(true);
 
         //set horizontal LinearLayout as layout manager to creating horizontal list view
-        LinearLayoutManager horizontalManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager horizontalManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true);
         horizontalList.setLayoutManager(horizontalManager);
         horizontalAdapter = new HorizontalListAdapter(this);
         horizontalList.setAdapter(horizontalAdapter);
