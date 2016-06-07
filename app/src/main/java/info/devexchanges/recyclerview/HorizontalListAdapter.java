@@ -2,6 +2,7 @@ package info.devexchanges.recyclerview;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,7 +53,7 @@ public class HorizontalListAdapter extends RecyclerView.Adapter<HorizontalListAd
 
         public ViewHolder(View view) {
             super(view);
-            linearLayout = (LinearLayout)view.findViewById(R.id.layout);
+            linearLayout = (LinearLayout) view.findViewById(R.id.layout);
         }
     }
 }
